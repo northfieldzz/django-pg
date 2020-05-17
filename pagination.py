@@ -1,8 +1,9 @@
 from django import template
+from django.conf import settings 
 
 register = template.Library()
 
-DISPLAY_PER_PAGE = 7
+DISPLAY_PER_PAGE = PRIVATE_DIR = getattr(settings, 'PAGENATE_DISPLAY_PER_PAGE', 7)
 
 
 @register.simple_tag
